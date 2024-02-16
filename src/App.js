@@ -6,7 +6,7 @@ import { TodoItem } from "./TodoItem";
 import { CreateTodoButton } from "./CreateTodoButton";
 
 const defaultTodos = [
-  { text: "Read in the morning", completed: false },
+  { text: "Read in the morning", completed: true },
   { text: "Study english", completed: false },
   { text: "Finish jobs", completed: false },
   { text: "Make lunch", completed: false },
