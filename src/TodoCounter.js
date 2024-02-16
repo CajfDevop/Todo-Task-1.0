@@ -5,7 +5,7 @@ function TodoCounter({ completed, total }) {
 
     total == completed ?
 
-      <h1 className="TodoCounter">
+      <h1 className="TodoCounterComplete">
         Congratulations!!! You have completed all your TODOs
       </h1>
 
