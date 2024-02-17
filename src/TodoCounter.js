@@ -2,7 +2,9 @@ import "./TodoCounter.css";
 
 function TodoCounter({ completed, total }) {
   return (
+    
 
+    
     total == completed ?
 
       <h1 className="TodoCounterComplete">
@@ -18,3 +20,5 @@ function TodoCounter({ completed, total }) {
 }
 
 export { TodoCounter };
+
+
