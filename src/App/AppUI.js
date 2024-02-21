@@ -8,6 +8,8 @@ import { TodosError } from "../TodosError";
 import { TodosEmpty } from "../TodosEmpty";
 import React from "react";
 import { TodoContext } from "../TodoContext";
+import { Modal } from "../Modal";
+import { TodoForm } from "../TodoForm"
 
 function AppUI() {
   const {
@@ -15,8 +17,10 @@ function AppUI() {
     error,
     searchedTodos,
     completeTodo,
-    deleteTodo
-    } = React.useContext(TodoContext);
+    deleteTodo,
+    openModal,
+    setOpenModal,
+  } = React.useContext(TodoContext);
 
   return (
     <React.Fragment>
@@ -26,7 +30,7 @@ function AppUI() {
       <TodoList>
         {loading && <TodosLoading />}
         {error && <TodosError />}
-        {!loading && searchedTodos.lenght === 0 && <TodosEmpty />}
+        {!loading && searchedTodos.length === 0 && <TodosEmpty />}
 
         {searchedTodos.map((todo) => (
           <TodoItem
@@ -39,7 +43,12 @@ function AppUI() {
         ))}
       </TodoList>
 
-      <CreateTodoButton />
+      <CreateTodoButton setOpenModal={setOpenModal} />
+
+      {openModal && (
+        <Modal>
+          <TodoForm />
+        </Modal>)}
     </React.Fragment>
   );
 }

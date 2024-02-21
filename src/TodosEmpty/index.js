@@ -2,7 +2,7 @@ import React from "react";
 
 function TodosEmpty() {
     return(
-        <p>¿Crete your first ToDo!!!</p>
+        <p>Create your first ToDo!!!</p>
     )
 }
 
